@@ -1,0 +1,37 @@
+<!--
+  Generated template for the HomeV2Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color='bglight'><ion-searchbar color="primary"
+    [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)"
+    (ionCancel)="onCancel($event)">
+  </ion-searchbar> 
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bdy"> 
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+     </ion-refresher>
+    <h2>Today</h2>
+ <div class="Weather" *ngIf="display == 1">
+   <br>
+    <img src="http://openweathermap.org/img/w/{{Info?.weather[0].icon}}.png" width="80" height="80">
+    <h4 style="margin-right: 15px" *ngIf="temp == 0">&ensp;{{((Info?.name))}}</h4>  
+  <h1 *ngIf="temp == 0">&ensp;{{((Info?.main.temp)-273.15).toFixed(0)}}<span style="font-size: 30pt">&#8451;</span> </h1>
+ </div>  
+ <div class="Temp">
+    <h3 *ngIf="temp == 0" style="font-weight: bold">&ensp;{{((Info?.main.temp_max)-273.15).toFixed(0)}}<span style="font-size: 15pt">&#8451;</span> </h3> 
+    <h3 *ngIf="temp == 0" style="font-weight: bold;grid-column: 3/4;margin-right: 10px;">&ensp;{{((Info?.main.temp_min)-273.15).toFixed(0)}}<span style="font-size: 15pt">&#8451;</span> </h3>
+ </div>
+  
+  <button style="margin: 10% 0 0 35%;border: 2px solid #03A9F4;background: white;color: #03A9F4" ion-button color='bglight' (click)="getForecast()" >Forecast</button> 
+</ion-content>

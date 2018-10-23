@@ -1,0 +1,40 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar text-center color='bglight'>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="body" text-center>
+<img src="https://cdn.freebiesupply.com/logos/large/2x/weather-ios-logo-png-transparent.png" width="150"><br><br>
+<ion-item class="temp" *ngIf="display == 1">
+<h6>Temparature :<span style="font-size: 20pt;font-weight: bold">{{((Info?.main.temp)-273.15).toFixed(0)}}</span>&ensp; <ion-icon style="font-size:20pt"  name="thermometer"></ion-icon></h6>
+</ion-item><br>
+<ion-item class="output" *ngIf="display == 1">
+    <h2>Weather Forecast &ensp; <ion-icon name="thunderstorm" color="bglight"></ion-icon>&ensp;<ion-icon color="iconcolor1" name="sunny"></ion-icon>&ensp;<ion-icon color="iconcolor2"  name="rainy"></ion-icon>&ensp;<ion-icon color="iconcolor3"  name="flash"></ion-icon>&ensp;<ion-icon name="cloud"></ion-icon> </h2>
+    <h5>City:&ensp;<span>{{City}}</span> </h5>
+    <h6>Description:&ensp;{{Info?.weather[0].description}}</h6>
+    <h6>Humidity:&ensp;{{Info?.main.humidity}}</h6>
+    <h6>Pressure:&ensp;{{Info?.main.pressure}}</h6>
+  </ion-item><br>
+<ion-list>
+  <ion-item>
+    <ion-label>City</ion-label>
+    <ion-select [(ngModel)]="City">
+      <ion-option value="Pretoria">Pretoria</ion-option>
+      <ion-option value="Johannesburg">Johannesburg</ion-option>
+      <ion-option value="Durban">Durban</ion-option>
+      <ion-option value="Nelspruit">Nelspruit</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+<button color='bglight' ion-button (click)="getForecast()"><ion-icon color="iconcolor"style="font-size:20pt" name="cloudy"></ion-icon> &ensp; Forecast</button><button color='bglight' ion-button (click)="reset()"><ion-icon color="iconcolor" style="font-size:20pt"  name="refresh"></ion-icon>&ensp;Reset</button><br> 
+</ion-content>

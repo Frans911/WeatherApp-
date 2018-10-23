@@ -1,0 +1,44 @@
+page-home-v2 {
+    .bdy h2{
+        text-align: center;
+        font-weight: bold;  
+        color: white;
+        background: rgba(0,0,0,.5);
+        margin: 0.3em;
+        border-radius: 5px;
+    }
+    .bdy ion-grid{ 
+        border-bottom: 1px solid #FFCA28;
+    }  
+    .bdy footer{
+        bottom: 0;
+        position: fixed;
+    }
+    .Weather{
+        text-align: center;
+        background: rgba(0,0,0,.5);
+        margin: 0.5em;
+        border-radius: 5px;
+    }
+    .Weather h1{
+        font-size: 65pt;
+        font-weight: bold;
+        color: white;
+    }
+    .Weather h4{
+        color: #FFCA28;
+    }
+    .Weather img{ 
+        border: 1px solid #FFCA28;
+        border-radius: 20px; 
+    }
+    .Temp{ 
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        background: rgba(0, 0, 0, 0.5);
+        margin: 0.5em;
+        border-radius: 5px;
+    }  
+    .Temp h1{ 
+    }
+}
